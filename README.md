@@ -100,7 +100,7 @@ HTTP数据协议，定义了：
 
 HTTP Header
 
-```http
+```
 authorization： Bearer {{ACCESS_TOKEN}}
 tvssettings: {{TVS_SETTINGS}}
 q-ua: {{Q-UA}}
@@ -110,7 +110,7 @@ Content-Length: {{HTTP Body长度}}
 
 HTTP Body
 
-```http
+```
 --this-is-a-boundary
 Content-Disposition: form-data; name="metadata"
 Content-Type: application/json; charset=UTF-8
@@ -141,7 +141,7 @@ Transfer-Encoding: chunked
 
 HTTP Body
 
-```http
+```
 {{CHUNK_SIZE}}
 --this-is-a-boundary
 Content-Disposition: form-data; name="metadata"
