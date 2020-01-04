@@ -1,4 +1,4 @@
- # SpeechRecognizer接口
+# SpeechRecognizer接口
 
 每个用户语音交互都会用到SpeechRecognizer。 它是TVS API的核心接口，提供了用于捕获用户语音的指令和事件，并在服务器端需要额外的语音输入时提示客户端。
 
@@ -46,22 +46,17 @@ Recognize事件用于将用户语音发送到服务器端并将该语音转换�
 
 - 收到StopCapture指令。
 - 服务器端关闭了该流。
-- 用户手动关闭麦克风。 例如，按住说话方案。
-  
+- 用户手动关闭麦克风。
+- 客户端集成了本地vad，本地vad检测说话结束。
 
-发送到服务器端的音频应编码为：
-- 16bit Linear PCM
-- 16kHz 比特率
-- 单声道
-- 小端字节序
+  
 
 **示例**
 
 ```java
 {
     "context": [
-        // This is an array of context objects that are used to communicate the
-        // state of all client components to 服务器端. See Context for details.      
+        ...  
     ],   
     "event": {
         "header": {
@@ -114,14 +109,26 @@ Content-Type: application/octet-stream
 
 | 参数                                                  | 描述                                                         | 类型   |
 | ----------------------------------------------------- | ------------------------------------------------------------ | ------ |
-| format                                                | 标识音频格式。可接受的值：AUDIO_L16_RATE_16000_CHANNELS_1。  | string |
+| format                                                | 音频格式。可接受的值见后面。                                 | string |
 | initiator                                             | 标识Recognize事件是如何启动的。当用户主动发起交互时（语音唤醒，点击开始），此对象是必需的。如果ExpectSpeech指令中存在initiator字段，则必须在随后的Recognize事件中带上它。如果ExpectSpeech指令中不存在initiator字段，则Recognize事件中也不应该存在这个字段。 | object |
-| initiator.type                                        | 表示用户启动交互所采取的操作类型。 可接受的值：TAP(点击开始录音)和WAKEWORD(唤醒启动)。  	| string |
-| initiator.payload                                     | -                                       | object |
-| initiator.payload.wakeWordIndices                     | 当initiator.type设置为WAKEWORD时，此对象是必需的。 | object |
+| initiator.type                                        | 表示用户启动交互所采取的操作类型。 可接受的值：TAP(点击开始录音)和WAKEWORD(唤醒启动)。 | string |
+| initiator.payload                                     | -                                                            | object |
+| initiator.payload.wakeWordIndices                     | 当initiator.type设置为WAKEWORD时，此对象是必需的。           | object |
 | initiator.payload.wakeWordIndices.startIndexInSamples | 表示唤醒词在音频流中开始位置（样本数）。 开始位置应精确到唤醒词检测开始的50ms以内。 | long   |
 | initiator.payload.wakeWordIndices.endIndexInSamples   | 表示唤醒词在音频流中结束位置（样本数）。 结束位置应精确到唤醒词检测结束的的150ms以内。 | long   |
 | initiator.payload.token                               | token。如果由ExpectSpeech指令触发，填入ExpectSpeech的`initiator.payload.token`。否则留空 | string |
+
+**format**
+format参数告诉服务器端，客户端的音频格式是怎样的，接受以下值
+
+值|格式|采样率|位深度|声道数|字节序|备注
+-|-|-|-|-|-|-|-
+AUDIO_SPEEX_L16_RATE_16000_CHANNELS_1|Speex|16000|16位|单声道|小端模式|需要特定版本，不建议使用
+AUDIO_SPEEX_L16_RATE_8000_CHANNELS_1|Speex|8000|16位|单声道|小端模式|需要特定版本，不建议使用
+AUDIO_OPUS_L16_RATE_16000_CHANNELS_1|Opus|16000|16位|单声道|小端模式
+AUDIO_OPUS_L16_RATE_16000_CHANNELS_1|Opus|16000|16位|单声道|小端模式
+AUDIO_PCM_L16_RATE_8000_CHANNELS_1|PCM|8000|16位|单声道|小端模式
+AUDIO_PCM_L16_RATE_16000_CHANNELS_1|PCM|8000|16位|单声道|小端模式
 
 **Initiator**
 
@@ -133,6 +140,7 @@ initiator参数告诉服务器端交互是如何触发的，并确定两件事�
 | -------- | ---- | ----- | ---------- | ----- |
 | TAP    | 音频流由点击和释放按钮（物理或GUI）启动，并在收到StopCapture指令时终止。  | Y | N  | N    |
 | WAKEWORD| 通过语音唤醒启动的音频流，并在收到StopCapture指令时终止。 | Y| Y  | Y  |
+
 
 ## 4 StopCapture 指令
 
@@ -218,6 +226,7 @@ initiator参数告诉服务器端交互是如何触发的，并确定两件事�
 
 如果收到ExpectSpeech指令，但在指定的超时时间内没有执行，则必须将此事件发送到服务器端。
 **示例**
+
 ```json
 {
     "event": {
