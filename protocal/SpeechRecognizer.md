@@ -123,7 +123,7 @@ Content-Type: application/octet-stream
 format参数告诉服务器端，客户端的音频格式是怎样的，接受以下值
 
 值|格式|采样率|位深度|声道数|字节序|备注
--|-|-|-|-|-|-|-
+-|-|-|-|-|-|-
 AUDIO_SPEEX_L16_RATE_16000_CHANNELS_1|Speex|16000|16位|单声道|小端模式|需要特定版本，不建议使用
 AUDIO_SPEEX_L16_RATE_8000_CHANNELS_1|Speex|8000|16位|单声道|小端模式|需要特定版本，不建议使用
 AUDIO_OPUS_L16_RATE_16000_CHANNELS_1|Opus|16000|16位|单声道|小端模式|
