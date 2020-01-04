@@ -19,7 +19,8 @@ SpeechRecognizer具有以下状态：
 ## 2 SpeechRecognizer 上下文
 
 如果本次语音识别是语音唤醒发起的，客户端需要上报当前设置的唤醒词。
-**代码示例**
+
+**示例**
 
 ```java
 {
@@ -183,7 +184,9 @@ initiator参数告诉服务器端交互是如何触发的，并确定两件事�
 
 当服务器端需要额外信息来满足用户的请求时，会发送ExpectSpeech指令。 它指示客户端打开麦克风并开始流式传输用户语音。 如果未在指定的超时窗口内打开麦克风，则必须从客户端向服务器端发送ExpectSpeechTimedOut事件。
 在与服务器端进行多轮交互期间，客户端将至少收到一条ExpectSpeech指令，指示客户端开始收音。 如果客户端收到`ExpectSpeech`，则必须将ExpectSpeech指令的`payload.initialtor`字段作为触发的Recognize事件中的`payload.initialtor`字段传递回服务器端。 如果将ExpectSpeech指令不存在`payload.initialtor`字段，则触发的Recognize事件也不应包含`payload.initialtor`字段。
+
 **代码示例**
+
 ```java
 {
     "directive": {
@@ -228,6 +231,7 @@ initiator参数告诉服务器端交互是如何触发的，并确定两件事�
 ## 6 ExpectSpeechTimedOut 事件
 
 如果收到ExpectSpeech指令，但在指定的超时时间内没有执行，则必须将此事件发送到服务器端。
+
 **示例**
 
 ```json
@@ -251,4 +255,5 @@ initiator参数告诉服务器端交互是如何触发的，并确定两件事�
 | messageId | 用于表示事件的唯一ID。 | string |
 
 **payload参数**
+
 空
