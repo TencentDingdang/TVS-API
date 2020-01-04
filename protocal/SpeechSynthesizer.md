@@ -7,6 +7,7 @@ SpeechSynthesizer接口用于返回服务器端的语音响应。 例如，当�
 SpeechSynthesizer具有以下状态：
 
 **PLAYING(播放)**：当客户端在播放音频时，SpeechSynthesizer应该处于播放状态。 当客户端播放完成时，SpeechSynthesizer应转换到完成状态。
+
 **FINISHED(完成)**：当客户端播放完音频时，SpeechSynthesizer应该上报SpeechFinished事件之后转换到FINISHED状态。
 
 ## 2 SpeechSynthesizer 上下文
@@ -46,7 +47,8 @@ SpeechSynthesizer具有以下状态：
 
 在大多数情况下，Speak指令是为响应用户请求而发送的，例如Recognize事件。 
 
-该指令作为multipart消息发送给您的客户端：一部分是JSON格式的指令和一部分二进制音频附件。
+该指令分为两部分:一部分是JSON格式的指令和一部分二进制音频附件。两部分数据作为multipart消息发送给客户端。
+
 **代码示例**
 ```java
 {
