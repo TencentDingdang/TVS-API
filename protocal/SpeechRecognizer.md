@@ -119,6 +119,7 @@ Content-Type: application/octet-stream
 | initiator.payload.token                               | token。如果由ExpectSpeech指令触发，填入ExpectSpeech的`initiator.payload.token`。否则留空 | string |
 
 **format**
+
 format参数告诉服务器端，客户端的音频格式是怎样的，接受以下值
 
 值|格式|采样率|位深度|声道数|字节序|备注
@@ -148,7 +149,8 @@ initiator参数告诉服务器端交互是如何触发的，并确定两件事�
 
 该指令代表服务器端已经识别到说话结束。 收到此指令后，客户端必须立即关闭麦克风并停止录音。
 **注意**：StopCapture在下行通道发送到客户端
-**代码示例**
+
+**示例**
 
 ```java
 {
@@ -174,6 +176,7 @@ initiator参数告诉服务器端交互是如何触发的，并确定两件事�
 | dialogRequestId | 用于将response中的指令与特定的Recognize事件关联起来的唯一ID。 | string |
 
 **payload参数**
+
 空
 
 ## 5 ExpectSpeech 指令
