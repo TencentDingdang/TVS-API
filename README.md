@@ -103,7 +103,7 @@ HTTP Header
 authorization： Bearer {{ACCESS_TOKEN}}
 tvssettings: {{TVS_SETTINGS}}
 q-ua: {{Q-UA}}
-content-type: multipart/form-data; boundary=--this-is-a-boundary
+content-type: multipart/form-data; boundary=this-is-a-boundary
 Content-Length: {{HTTP Body长度}}
 ```
 
@@ -134,7 +134,7 @@ HTTP Header
 authorization： Bearer {{ACCESS_TOKEN}}
 tvssettings: {{TVS_SETTINGS}}
 q-ua: {{Q-UA}}
-content-type: multipart/form-data; boundary=--this-is-a-boundary
+content-type: multipart/form-data; boundary=this-is-a-boundary
 Transfer-Encoding: chunked
 ```
 
