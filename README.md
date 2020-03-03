@@ -566,8 +566,8 @@ TVS API提供一系列功能，设备可以选择性的接入一部分能力。
 - [Push能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
 - [语音识别-oneshoot](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
 - [全双工能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
-- [UI能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)
-
+- [UI能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
+- [情绪系统](https://github.com/TencentDingdang/TVS-API/blob/master/%E6%83%85%E7%BB%AA%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%85%A5%E6%8C%87%E5%8D%97.md)（可选）
 
 
 
