@@ -11,6 +11,7 @@ AudioPlayer具有以下状态：
 **PLAYING**: 当您的客户端启动音频流播放时，AudioPlayer必须从idle状态转换为playing。
 如果您收到指示客户端执行操作的指令，例如暂停或停止音频流，如果客户端无法缓冲流，或者如果播放失败，则AudioPlayer必须在执行操作时转换到适当的状态（并且向腾讯云小微发送事件）。 否则，AudioPlayer必须保持播放状态，直到当前流完成。
 此外，在以下情况下，AudioPlayer必须保持播放状态：
+
 - 向腾讯云小微报告播放进度
 - 将流元数据发送到腾讯云小微
 
@@ -34,11 +35,12 @@ AudioPlayer具有以下状态：
 
 ![状态图](assets/2994f795d824ba52d8adef68291b8837.png)
 
-## 2 AudioPlayer上下文
+## 2 上下文
 
 腾讯云小微希望客户端报告playerActivity（状态），以及当前正在播放的媒体项的offsetInMilliseconds以及需要上下文的每个事件。
 
 **示例代码**
+
 ```java
 {
     "header": {
