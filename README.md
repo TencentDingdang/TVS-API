@@ -1,7 +1,6 @@
 
 
 <h1>TVS API接入指南</h1>
-
 [TOC]
 # 一. 接入前置要求
 
@@ -552,15 +551,13 @@ TVS API提供一系列功能，设备可以选择性的接入一部分能力。
 建议按照如下顺序接入：
 
 - [账号授权与刷票](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（必须）
-- [语音识别能力和语音朗读](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（必须）
-- [多轮对话](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（必须）
+- [语音识别能力和语音朗读](https://github.com/TencentDingdang/TVS-API/blob/master/语音识别和语音播报接入指南.md)（必须）
 - [公共能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（必须）
 - [扬声器管理能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
-- [自定义技能](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
+- [自定义技能](https://github.com/TencentDingdang/TVS-API/blob/master/自定义技能.md)（可选）
 - [媒体播放控制-语音控制能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
 - [媒体播放控制-按钮控制能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
 - [闹钟](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
-- [自定义技能](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
 - [原子能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
 - [媒体播放控制-远程点播控制](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
 - [Push能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
