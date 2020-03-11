@@ -555,8 +555,8 @@ TVS API提供一系列功能，设备可以选择性的接入一部分能力。
 - [公共能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（必须）
 - [扬声器管理能力](https://github.com/TencentDingdang/TVS-API/blob/master/扬声器管理.md)（可选）
 - [自定义技能](https://github.com/TencentDingdang/TVS-API/blob/master/自定义技能.md)（可选）
-- [媒体播放控制-语音控制能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
-- [媒体播放控制-按钮控制能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
+- [媒体播放控制-语音控制能力](https://github.com/TencentDingdang/TVS-API/blob/master/媒体播放控制-语音控制能力.md)（可选）
+- [媒体播放控制-按钮控制能力](https://github.com/TencentDingdang/TVS-API/blob/master/媒体播放控制-按钮控制能力.md)（可选）
 - [闹钟](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
 - [原子能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
 - [媒体播放控制-远程点播控制](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
