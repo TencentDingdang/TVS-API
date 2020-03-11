@@ -553,7 +553,7 @@ TVS API提供一系列功能，设备可以选择性的接入一部分能力。
 - [账号授权与刷票](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（必须）
 - [语音识别能力和语音朗读](https://github.com/TencentDingdang/TVS-API/blob/master/语音识别和语音播报接入指南.md)（必须）
 - [公共能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（必须）
-- [扬声器管理能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
+- [扬声器管理能力](https://github.com/TencentDingdang/TVS-API/blob/master/扬声器管理.md)（可选）
 - [自定义技能](https://github.com/TencentDingdang/TVS-API/blob/master/自定义技能.md)（可选）
 - [媒体播放控制-语音控制能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
 - [媒体播放控制-按钮控制能力](https://github.com/TencentDingdang/TVS-API/blob/master/README.md)（可选）
