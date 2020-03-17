@@ -2,6 +2,10 @@
 
 System接口提供多个系统级事件、指令。
 
+##  Context
+
+无
+
 ## 1 SynchronizeState 事件
 
 建立新连接时，必须发送SynchronizeState事件到腾讯云小微以更新所有终端状态。
@@ -97,3 +101,40 @@ System接口提供多个系统级事件、指令。
 | ------------------------------- | ------------------------------------------------------ |
 | UNEXPECTED_INFORMATION_RECEIVED | 发送给客户端的指令格式不正确或有效负载不符合指令规范。 |
 | INTERNAL_ERROR                  | 设备处理指令时发生错误，并且错误不属于指定的类别。     |
+
+## 3 Exception 指令
+
+当云小微后台遇到问题时，会下发Exception指令
+
+```json
+{
+    "header": {
+        "namespace": "System",
+        "name": "Exception",
+        "messageId": "{{STRING}}"
+    },
+
+    "payload": {
+        "code": "{{STRING}}",
+        "description": "{{STRING}}"
+    }
+}
+
+```
+
+
+**Header**
+
+| 参数      | 描述                       | 类型   |
+| --------- | -------------------------- | ------ |
+| messageId | 用于表示特定消息的唯一ID。 | string |
+
+**payload**
+
+| 参数              | 描述                                                         | 类型   |
+| ----------------- | ------------------------------------------------------------ | ------ |
+| code     | 错误类型                                            | string |
+| description        | 错误信息                              | string |
+
+## 
+
